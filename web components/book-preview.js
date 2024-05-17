@@ -10,7 +10,7 @@ class BookPreview extends HTMLElement {
     const author = this.getAttribute('author');
     const id = this.getAttribute('id');
 
-      this.shadowRoot.innerHTML = `
+    this.shadowRoot.innerHTML = `
       <style>
         .preview {
           border-width: 0;
