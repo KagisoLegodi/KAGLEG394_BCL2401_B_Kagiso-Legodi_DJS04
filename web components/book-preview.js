@@ -5,6 +5,9 @@ class BookPreview extends HTMLElement {
   }
 
   connectedCallback(){
-      //Future code will be added here
+      const image = this.getAttribute("image");
+      const title = this.getAttribute("title");
+      const author = this.getAttribute("author");
+      const id = this.getAttribute("id");
   }
 }
