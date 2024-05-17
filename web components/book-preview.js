@@ -4,11 +4,11 @@ class BookPreview extends HTMLElement {
     this.attachShadow({ mode: 'open' });
   }
 
-  connectedCallback(){
-      const image = this.getAttribute("image");
-      const title = this.getAttribute("title");
-      const author = this.getAttribute("author");
-      const id = this.getAttribute("id");
+  connectedCallback() {
+    const image = this.getAttribute('image');
+    const title = this.getAttribute('title');
+    const author = this.getAttribute('author');
+    const id = this.getAttribute('id');
 
       this.shadowRoot.innerHTML = `
       <style>
