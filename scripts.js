@@ -1,9 +1,6 @@
-import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
-import './book-preview.js';
-import './book-detail.js';
-import './web components/search-overlay.js';
-import './web components/settings-overlay.js';
-import './web components/show-more-button.js';
+// Importing necessary data and constants from data.js file
+import { books, authors, genres, BOOKS_PER_PAGE } from './data.js';
+import './web components/book-preview.js';
 
 // Initialize page number and matches array
 let page = 1;
