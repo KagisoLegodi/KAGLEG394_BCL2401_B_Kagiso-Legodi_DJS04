@@ -1,5 +1,9 @@
-// Importing necessary data and constants from data.js file
 import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
+import './book-preview.js';
+import './book-detail.js';
+import './search-overlay.js';
+import './settings-overlay.js';
+import './show-more-button.js';
 
 // Initialize page number and matches array
 let page = 1;
@@ -12,16 +16,11 @@ const getElement = (selector) => document.querySelector(selector);
 const createBookPreviews = (books, container) => {
   const fragment = document.createDocumentFragment();
   books.forEach(({ author, id, image, title }) => {
-    const element = document.createElement("button");
-    element.classList = "preview";
-    element.setAttribute("data-preview", id);
-    element.innerHTML = `
-      <img class="preview__image" src="${image}" />
-      <div class="preview__info">
-        <h3 class="preview__title">${title}</h3>
-        <div class="preview__author">${authors[author]}</div>
-      </div>
-    `;
+    const element = document.createElement('book-preview');
+    element.setAttribute('data-preview', id);
+    element.setAttribute('data-image', image);
+    element.setAttribute('data-title', title);
+    element.setAttribute('data-author', authors[author]);
     fragment.appendChild(element);
   });
   container.appendChild(fragment);
@@ -59,15 +58,8 @@ const applyTheme = (theme) => {
 // Function to update "Show more" button text and state
 const updateShowMoreButton = () => {
   const remainingBooks = matches.length - page * BOOKS_PER_PAGE;
-  const button = getElement("[data-list-button]");
-  button.innerText = `Show more (${remainingBooks})`;
-  button.disabled = remainingBooks <= 0;
-  button.innerHTML = `
-    <span>Show more</span>
-    <span class="list__remaining">(${
-      remainingBooks > 0 ? remainingBooks : 0
-    })</span>
-  `;
+  const button = document.querySelector('show-more-button');
+  button.update(remainingBooks);
 };
 
 // Event listener functions
@@ -153,14 +145,7 @@ getElement("[data-list-items]").addEventListener("click", (event) => {
   if (active) {
     const book = books.find((book) => book.id === active.dataset.preview);
     if (book) {
-      getElement("[data-list-active]").open = true;
-      getElement("[data-list-blur]").src = book.image;
-      getElement("[data-list-image]").src = book.image;
-      getElement("[data-list-title]").innerText = book.title;
-      getElement("[data-list-subtitle]").innerText = `${
-        authors[book.author]
-      } (${new Date(book.published).getFullYear()})`;
-      getElement("[data-list-description]").innerText = book.description;
+      document.querySelector('book-detail').open(book);
     }
   }
 });

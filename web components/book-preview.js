@@ -1,7 +1,10 @@
-// book-preview.js
 class BookPreview extends HTMLElement {
   constructor() {
-    super();
-    this.attachShadow({ mode: "open" }); 
+      super();
+      this.attachShadow({ mode: "open" }); 
+  }
+
+  connectedCallback(){
+      //Future code will be added here
   }
 }
