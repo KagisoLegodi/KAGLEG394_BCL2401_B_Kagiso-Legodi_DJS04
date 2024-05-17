@@ -1,9 +1,7 @@
 import { books, authors, genres, BOOKS_PER_PAGE } from "./data.js";
 import './book-preview.js';
 import './book-detail.js';
-import './search-overlay.js';
-import './settings-overlay.js';
-import './show-more-button.js';
+import './web components/search-overlay.js';
 
 // Initialize page number and matches array
 let page = 1;
