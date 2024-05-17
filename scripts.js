@@ -26,12 +26,12 @@ const createBookPreviews = (books, container) => {
 // Function to create and append options to a select element
 const createOptions = (options, defaultOption, container) => {
   const fragment = document.createDocumentFragment();
-  const firstOption = document.createElement("option");
-  firstOption.value = "any";
+  const firstOption = document.createElement('option');
+  firstOption.value = 'any';
   firstOption.innerText = defaultOption;
   fragment.appendChild(firstOption);
   Object.entries(options).forEach(([id, name]) => {
-    const element = document.createElement("option");
+    const element = document.createElement('option');
     element.value = id;
     element.innerText = name;
     fragment.appendChild(element);
