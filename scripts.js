@@ -14,10 +14,10 @@ const createBookPreviews = (books, container) => {
   const fragment = document.createDocumentFragment();
   books.forEach(({ author, id, image, title }) => {
     const element = document.createElement('book-preview');
-    element.setAttribute('data-preview', id);
-    element.setAttribute('data-image', image);
-    element.setAttribute('data-title', title);
-    element.setAttribute('data-author', authors[author]);
+    element.setAttribute('id', id);
+    element.setAttribute('image', image);
+    element.setAttribute('title', title);
+    element.setAttribute('author', authors[author]);
     fragment.appendChild(element);
   });
   container.appendChild(fragment);
