@@ -3,6 +3,7 @@ import './book-preview.js';
 import './book-detail.js';
 import './web components/search-overlay.js';
 import './web components/settings-overlay.js';
+import './web components/show-more-button.js';
 
 // Initialize page number and matches array
 let page = 1;
