@@ -41,14 +41,14 @@ const createOptions = (options, defaultOption, container) => {
 
 // Function to apply theme
 const applyTheme = (theme) => {
-  const isNight = theme === "night";
+  const isNight = theme === 'night';
   document.documentElement.style.setProperty(
-    "--color-dark",
-    isNight ? "255, 255, 255" : "10, 10, 20"
+    '--color-dark',
+    isNight ? '255, 255, 255' : '10, 10, 20'
   );
   document.documentElement.style.setProperty(
-    "--color-light",
-    isNight ? "10, 10, 20" : "255, 255, 255"
+    '--color-light',
+    isNight ? '10, 10, 20' : '255, 255, 255'
   );
 };
 
