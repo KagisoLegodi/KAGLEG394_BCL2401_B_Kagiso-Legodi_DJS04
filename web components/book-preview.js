@@ -70,5 +70,16 @@ class BookPreview extends HTMLElement {
               </div>
           </button>
       `;
-  }
+      this.shadowRoot
+        .querySelector(".preview")
+        .addEventListener("click", () => {
+            this.dispatchEvent(
+            new CustomEvent("book-preview-click", {
+                detail: { id },
+                bubbles: true,
+                composed: true,
+            })
+        );
+    });
+    }
 }
